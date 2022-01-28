@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock title %} {% block
+    body %}
+      <!-- multiple choice questions -->
+
+      <div class="container mt-sm-5 my-1">
+        {% if  message|length!=0%}
+          <div class="alert alert-danger" role="alert">
+            {{message}}
+          </div>
+        {% endif %}
+        <form action="/signin" method="POST">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="signinemail" id="signinemail">
+          </div>
+  
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Please Enter your Password</label>
+            <input class="form-control" type="password" placeholder="Password" aria-label="default input example" name="signinpassword" id="signinpassword">
+          </div>
+          
+          <div class="ml-auto mr-sm-5"> <button type = "submit" class="btn btn-success">Submit</button> </div>
+        </form>
+      </div>
+  {% endblock body %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock title %} {% block
+    body %}
+    
+    <!-- multiple choice questions -->
+    <div class="container mt-sm-5 my-1">
+        <form action="/tempq/{{count}}" method="POST">
+            <div class="question ml-sm-5 pl-sm-5 pt-2">
+                <div class="py-2 h5"><b>{{temp[0]}}</b></div>
+                <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"> 
+                    <label class="options">{{temp[1]}}
+                        <input type="radio" name="radio"> <span class="checkmark"></span>
+                    </label> 
+                    <label class="options">{{temp[2]}} 
+                        <input type="radio" name="radio"> <span class="checkmark"></span> 
+                    </label> 
+                    {% if temp[3]|length != 0 %}
+                        <label class="options">{{temp[3]}} 
+                            <input type="radio" name="radio"> <span class="checkmark"></span> 
+                        </label> 
+                    {% endif %}
+                    <!-- <label class="options">{{temp[3]}} 
+                        <input type="radio" name="radio"> <span class="checkmark"></span> 
+                    </label>  -->
+                    {% if temp[4]|length != 0 %}
+                        <label class="options">{{temp[4]}} 
+                            <input type="radio" name="radio"> <span class="checkmark"></span> 
+                        </label> 
+                    {% endif %}
+                </div>
+                <!-- mcq options -->
+    
+                <!-- <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"> <label class="options">Small Business Owner or Employee <input type="radio" name="radio"> <span class="checkmark"></span> </label> <label class="options">Nonprofit Owner or Employee <input type="radio" name="radio"> <span class="checkmark"></span> </label> <label class="options">Journalist or Activist <input type="radio" name="radio"> <span class="checkmark"></span> </label> <label class="options">Other <input type="radio" name="radio"> <span class="checkmark"></span> </label> </div> -->
+            </div>
+            <div class="d-flex align-items-center pt-3">
+                <div class="ml-auto mr-sm-5"> <button type = "submit" class="btn btn-success">Next</button> </div>
+            </div>
+        </form>
+    </div>
+    
+    {% endblock body %}

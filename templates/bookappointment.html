@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock title %} {% block
+    body %}
+
+    <div class="container mt-sm-5 my-1">
+        <form action="/bookfinal">
+            <div class="ml-auto mr-sm-5"> 
+                <button type = "submit" class="btn btn-success" style="margin-left: 15%; margin-top: 10px">
+                    Do you want to book appointment with associate?
+                </button> 
+            </div>
+        </form>
+        <form action="/notify">
+            <div class="ml-auto mr-sm-5"> 
+                <button type = "submit" class="btn btn-success" style="margin-left: 33%; margin-top: 10px">
+                    Get relevant articles
+                </button> 
+            </div>
+        </form>
+    </div>
+
+{% endblock body %}
